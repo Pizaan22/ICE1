@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class CardTrickICE1 {
     public static void main(String[] args) {
         Card[] magicHand = new Card[7]; //Array of object
+        Card luckyCard = new Card(0,"spades"); //Card object added from GitHub
         
         //step 1: generate 7 random cards and store in an array
         for (int i = 0; i < magicHand.length; i++) {
