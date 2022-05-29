@@ -19,27 +19,46 @@ public class CardTrickICE1 {
         
         //step 1: generate 7 random cards and store in an array
         for (int i = 0; i < magicHand.length; i++) {
-            Card c = new Card((int) (Math.random() * 14), Card.SUITS[(int) (Math.random() * 4)]);
+            Card c = new Card((int)((Math.random() * 12) + 1), Card.SUITS[(int) (Math.random() * 4)]);
             magicHand[i] = c;
         }
 
         //step 2:take input 
         Scanner scn = new Scanner(System.in);
-        System.out.println("Enter the following details to see if the card you choose "
-                + "exists among the random 7 :");
+        System.out.println("Please choose the suit: \n1: Hearts \n2: Diamonds"
+        + "\n3: Spades \n4: Clubs");
         System.out.print("Suit: ");
-        String inpSuit = scn.nextLine().toLowerCase();
+        int inpSuitNum = scn.nextInt();
+        String inpSuit;
 
-        System.out.print("Rank: ");
-        String inpRank = scn.nextLine();
+        switch (inpSuitNum) {
+            case 1:
+                inpSuit = "hearts";
+                break;
+            case 2:
+                inpSuit = "diamonds";
+                break;
+            case 3:
+                inpSuit = "spades";
+                break;
+            case 4:
+                inpSuit = "clubs";
+                break;
+            default: 
+                inpSuit = "";
+                break;
+        }
+
+        System.out.print("Please choose the value (1 to 12) : ");
+        String inpRank = scn.next();
 
         String userInp = inpRank + " of " + inpSuit;
 
         //step 3: match with array 
-        String output = "card not found";
+        String output = "Sorry, no match.";
         for (Card card : magicHand) {
             if (userInp.equals(card.toString())) {
-                output = "card is found";
+                output = "Card is found.";
                 break;
             }
         }
