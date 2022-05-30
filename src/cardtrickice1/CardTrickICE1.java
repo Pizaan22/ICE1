@@ -19,7 +19,7 @@ public class CardTrickICE1 {
         
         //step 1: generate 7 random cards and store in an array
         for (int i = 0; i < magicHand.length; i++) {
-            Card c = new Card((int)((Math.random() * 12) + 1), Card.SUITS[(int) (Math.random() * 4)]);
+            Card c = new Card((int)((Math.random() * 13) + 1), Card.SUITS[(int) (Math.random() * 4)]);
             magicHand[i] = c;
         }
 
@@ -53,7 +53,7 @@ public class CardTrickICE1 {
                 break;
         }
 
-        System.out.print("Please choose the value (1 to 12) : ");
+        System.out.print("Please choose the value (1 to 13) : ");
         String inpRank = scn.next();
 
         String userInp = inpRank + " of " + inpSuit;
