@@ -23,6 +23,10 @@ public class CardTrickICE1 {
             magicHand[i] = c;
         }
 
+        for(Card card : magicHand){
+            System.out.println(card);
+        }
+
         //step 2:take input 
         Scanner scn = new Scanner(System.in);
         System.out.println("Please choose the suit: \n1: Hearts \n2: Diamonds"
